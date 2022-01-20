@@ -20,12 +20,12 @@ app.get("/getCreatedSurveys", (req, res) => {
 	})	
 })
 
-app.post("/createUser", async (req, res) => {
-	const user = req.body;
-	const newAccount = new AccountModel(user);
-	await newAccount.save();
-
-	res.json(user);
+app.post("/createSurvey", async (req, res) => {
+	console.log('req.body:', req.body)
+	const createdSurvey = req.body;
+	const newCreatedSurvey = new CreatedSurveyModel(createdSurvey);
+	await newCreatedSurvey.save();
+	res.json(createdSurvey);
 })
 
 
