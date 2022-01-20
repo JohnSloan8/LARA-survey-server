@@ -20,6 +20,10 @@ app.get("/getCreatedSurveys", (req, res) => {
 	})	
 })
 
+app.get("/", (req, res) => {
+	res.sendFile(path.resolve('pages/index.html'));
+})
+
 app.post("/createSurvey", async (req, res) => {
 	console.log('req.body:', req.body)
 	const createdSurvey = req.body;
